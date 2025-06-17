@@ -16,8 +16,7 @@ services:
     name: spree-web
     runtime: ruby
     plan: free # Changed to free tier
-    buildCommand: bin/render-build.sh
-    preDeployCommand: bin/rails db:migrate && bin/rails db:seed
+    buildCommand: bin/rails db:migrate && bin/rails db:seed && bin/render-build.sh
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
