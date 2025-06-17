@@ -8,14 +8,14 @@ databases:
   - name: spree-db
     databaseName: spree
     user: spree
-    plan: basic-1gb
-    diskSizeGB: 10
+    plan: free # Changed to free tier
+    diskSizeGB: 1
 
 services:
   - type: web
     name: spree-web
     runtime: ruby
-    plan: standard
+    plan: free # Changed to free tier
     buildCommand: bin/render-build.sh
     preDeployCommand: bin/rails db:migrate && bin/rails db:seed
     startCommand: "bundle exec puma -C config/puma.rb"
@@ -27,7 +27,7 @@ services:
       - key: SECRET_KEY_BASE
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+        value: 1 # Reduced for free tier
       - key: REDIS_URL
         fromService:
           type: keyvalue
@@ -36,7 +36,7 @@ services:
   - type: worker
     name: spree-worker
     runtime: ruby
-    plan: standard
+    plan: free # Changed to free tier
     buildCommand: bin/render-build.sh
     startCommand: bundle exec sidekiq
     envVars:
@@ -61,11 +61,11 @@ services:
   - type: keyvalue
     name: keyvalue
     ipAllowList: []
-    plan: starter
+    plan: free # Changed to free tier
     maxmemoryPolicy: noeviction
 
   - type: keyvalue
     name: keyvalue-cache
     ipAllowList: []
-    plan: starter
+    plan: free # Changed to free tier
     maxmemoryPolicy: allkeys-lru
