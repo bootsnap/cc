@@ -9,7 +9,6 @@ databases:
     databaseName: spree
     user: spree
     plan: free # Changed to free tier
-    diskSizeGB: 1
 
 services:
   - type: web
