@@ -2,9 +2,9 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
 
-  config.action_controller.asset_host = "https://spree-web-d5pu.onrender.com"
-  config.action_mailer.default_url_options = "https://spree-web-d5pu.onrender.com"
-  config.action_controller.default_url_options = "https://spree-web-d5pu.onrender.com"
+  # config.action_controller.asset_host = "https://spree-web-d5pu.onrender.com"
+  # config.action_mailer.default_url_options = "https://spree-web-d5pu.onrender.com"
+  # config.action_controller.default_url_options = "https://spree-web-d5pu.onrender.com"
 
   # Settings specified here will take precedence over those in config/application.rb.
 
