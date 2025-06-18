@@ -1,6 +1,11 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  config.action_controller.asset_host = ENV['RENDER_EXTERNAL_HOSTNAME']
+  config.action_mailer.default_url_options = { host: ENV['RENDER_EXTERNAL_HOSTNAME'] }
+  config.action_controller.default_url_options = { host: ENV['RENDER_EXTERNAL_HOSTNAME'] }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
