@@ -1,6 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+
+
+  #   HOSTNEME  = "mydomain.com"
+
+  # config.action_mailer.default_url_options = { host: HOSTNEME, protocol: "http" }
+  # Rails.application.routes.default_url_options[:host] = HOSTNEME
+  # Rails.application.routes.default_url_options[:protocol] = "http"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Make code changes take effect immediately without server restart.
